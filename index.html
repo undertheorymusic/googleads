@@ -6,6 +6,16 @@
     <title>Under Theory // Official Hub</title>
     <!-- Google Fonts untuk kesan majalah lama / typewriter -->
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18389736859"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-18389736859');
+    </script>
+
     <style>
         * {
             margin: 0;
@@ -245,7 +255,7 @@
         <section>
             <div class="section-title">// Stream Links</div>
             <div class="link-grid">
-                <a href="https://open.spotify.com/artist/1AujrTfyIKYhlSeOqR4ird" target="_blank" rel="noopener noreferrer" class="magazine-link">Spotify</a>
+                <a href="https://open.spotify.com/artist/1AujrTfyIKYhlSeOqR4ird" target="_blank" rel="noopener noreferrer" class="magazine-link" onclick="gtagSendEvent('https://open.spotify.com/artist/1AujrTfyIKYhlSeOqR4ird')">Spotify</a>
                 <a href="https://music.apple.com/us/artist/under-theory/6795514773" target="_blank" rel="noopener noreferrer" class="magazine-link">Apple Music</a>
                 <a href="https://www.deezer.com/en/artist/406796162" target="_blank" rel="noopener noreferrer" class="magazine-link">Deezer</a>
                 <a href="https://music.youtube.com/@UnderTheory-Official" target="_blank" rel="noopener noreferrer" class="magazine-link">YouTube Music</a>
@@ -328,6 +338,15 @@
     <script>
         // Update copyright year automatically
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Google Ads conversion tracking for Spotify button
+        // (link uses target="_blank", so it already opens in a new tab —
+        // no need to redirect in the callback, just fire the conversion event)
+        function gtagSendEvent(url) {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-18389736859/L-SPCMSotvYcEJu79MBE'
+            });
+        }
 
         // Console system check
         console.log("%c[UNDER THEORY SYSTEM INITIALIZED]", "color: #ff3333; font-family: monospace; font-size: 14px; font-weight: bold;");
